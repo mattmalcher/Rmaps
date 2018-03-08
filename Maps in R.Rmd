@@ -14,9 +14,6 @@ In this markdown document I will investigate methods and packages for creating m
 
 # List of Tutorials
 
-
-
-
 ## Trafford Data Lab
 https://medium.com/@traffordDataLab/lets-make-a-map-in-r-7bd1d9366098
 
@@ -25,10 +22,43 @@ https://medium.com/@traffordDataLab/lets-make-a-map-in-r-7bd1d9366098
 * classInt 
 * viridis
 
+### Get Local Authority Boundaries
 
-# Getting a shapefile
+The ONS Open Geography Portal is one of the best places for UK shapefiles. You can get URL's for geojson's from the `API` dropdown on each page.
+
+```{r}
+require(sf)
+UK_LA_SuperGen_Clipped <- "https://opendata.arcgis.com/datasets/ae90afc385c04d869bc8cf8890bd1bcd_3.geojson"
+UKLA <- st_read(dsn=UK_LA_SuperGen_Clipped)
+```
+
+```{r Simple Plot }
+plot(st_geometry(UKLA))
+```
+
+```{r}
+#We can also read in the lookup tables from ONS using st_read - these just have an empty list instead of a set of points for each item.
+LAD2Country <- st_read(dsn="https://opendata.arcgis.com/datasets/ffbb56e049b145a28720f0d817d6c197_0.geojson")
+
+st_geometry(LAD2Country) <- NULL
+
+```
+
+## Join to Other Data
+
+```{r}
+require(dplyr)
+LA_with_Country <- left_join(UKLA,LAD2Country, by="")
+```
 
 # Other useful links
+
+## Spatial Joins!
+https://r-spatial.github.io/sf/reference/st_join.html
+
+#Tidyverse sf things
+http://strimas.com/r/tidy-sf
+
 
 ## Reproducible Research Course
 The final lecture of the [http://eriqande.github.io/rep-res-web/syllabus.html](Reproducible reasearch course) looks at severa differnt mapping methods for making maps with R. Note that this page is also available as an RMD. 
