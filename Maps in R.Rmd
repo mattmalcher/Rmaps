@@ -30,8 +30,8 @@ https://medium.com/@traffordDataLab/lets-make-a-map-in-r-7bd1d9366098
 
 # Other useful links
 
-##Reproducible Research Course
-The final lecture of the (http://eriqande.github.io/rep-res-web/syllabus.html)[Reproducible reasearch course] looks at severa differnt mapping methods for making maps with R. Note that this page is also available as an RMD. 
+## Reproducible Research Course
+The final lecture of the [http://eriqande.github.io/rep-res-web/syllabus.html](Reproducible reasearch course) looks at severa differnt mapping methods for making maps with R. Note that this page is also available as an RMD. 
 https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html
 
 
