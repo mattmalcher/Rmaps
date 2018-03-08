@@ -1,0 +1,69 @@
+---
+title: "Maps in R"
+author: "Matthew Malcher"
+date: "8 March 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Introduction
+In this markdown document I will investigate methods and packages for creating maps in R. This is a WIP and the intent is that it acts as a personal knowledge base for mapping in R.
+
+#List of Tutorials
+
+
+
+
+## Trafford Data Lab
+https://medium.com/@traffordDataLab/lets-make-a-map-in-r-7bd1d9366098
+
+* sf
+* tidyverse
+* classInt 
+* viridis
+
+
+# Getting a shapefile
+
+# Other useful links
+
+##Reproducible Research Course
+The final lecture of the [http://eriqande.github.io/rep-res-web/syllabus.html](Reproducible reasearch course) looks at severa differnt mapping methods for making maps with R. Note that this page is also available as an RMD. 
+https://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html
+
+
+https://blog.exploratory.io/creating-geojson-out-of-shapefile-in-r-40bc0005857d
+
+## Leaflet
+From the people at RStudion - a section of the leaflet tutorial dealing with maps.
+https://rstudio.github.io/leaflet/json.html
+
+Packages
+* rgdal
+* geojsonio#
+
+## UK Data Service
+Tutorial from the UK data service on how to produce maps of census data using R
+https://www.ukdataservice.ac.uk/media/604930/mapping-2011-census-microdata-using-r.pdf
+
+Packages:
+* rgdal
+* tmap
+* dplyr
+* data.table
+
+
+## Kev Johnson
+A blogger who seems to know whats up
+http://www.kevjohnson.org/making-maps-in-r/
+
+Packages:
+* ggplot2
+* rgdal: reads in shape files
+* scales: tells ggplot what the proper scale should be
+* ggmap: comes with a nice theme_nothing() function
+* dplyr: for left_join()
+* Cairo: creates high quality vector and bitmap images

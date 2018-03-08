@@ -1,0 +1,37 @@
+---
+title: "Test3"
+author: "Matthew Malcher"
+date: "8 March 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+https://www.ukdataservice.ac.uk/media/604930/mapping-2011-census-microdata-using-r.pdf
+
+Read map data in using GDAL
+```{r}
+library(rgdal)
+dsnengw <- "test2"
+engw <-readOGR(dsn = dsnengw)
+
+```
+
+Extract Data Table From geodata
+```{r}
+library(data.table)
+engwlamapdata <- data.table(engw@data)
+engwlamapdata$numid <-as.numeric(paste(engwlamapdata$label))
+```
+
+```{r}
+library(tmap)
+EngWmap <- tm_shape(engw)  + 
+  tm_borders(col = "black") #+
+
+EngWmap
+dev.off()
+```
+
+
